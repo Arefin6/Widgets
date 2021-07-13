@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Convert from './Convert';
 import Dropdown from './Dropdown';
 
 const options=[
@@ -21,7 +22,7 @@ const options=[
         
    ];
  
-//    AIzaSyCHUCmpR7cT_yDFHC98CZJy2LTms-IwDlM
+//    
 
 const Translate = () => {
     const [language,setLanguage] = useState(options[0]);
@@ -40,6 +41,9 @@ const Translate = () => {
             selected={language}
             onSelectChange={setLanguage}
             ></Dropdown>
+            <hr />
+            <h3 className="ui header">output</h3>
+            <Convert text={text} language={language} ></Convert>
         </div>
     );
 };
